@@ -1,3 +1,9 @@
+import env
+import os
+import pandas as pd
+import numpy as np
+from pydataset import data
+
 def check_file_exists(filename, query, url):
     if os.path.exists(filename):
         print('this file exists, reading csv')
