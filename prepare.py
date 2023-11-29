@@ -31,6 +31,22 @@ def prep_telco(df):
     return df
 
 
+def clean_titanic(df):
+    """
+    students - write docstring
+    """
+    # drop unncessary columns
+    df = df.drop(columns=['embarked', 'age', 'deck', 'class'])
+
+    # made this a string so its categorical
+    df.pclass = df.pclass.astype(object)
+
+    # filled nas with the mode
+    df.embark_town = df.embark_town.fillna('Southampton')
+
+    return df
+
+
 def splitting_data(df, col):
     '''
     i will write a docstring, like send in target variable
