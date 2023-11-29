@@ -1,3 +1,6 @@
+from sklearn.model_selection import train_test_split
+
+
 def prep_iris(df):
     """
     this function takes in the iris dataframe and returns a cleaned version
@@ -28,17 +31,23 @@ def prep_telco(df):
     return df
 
 
-def splitting_data(df):
-    train, validate_test = train_test_split(df,  # send in initial df
-                                            train_size=0.60,
-                                            # size of the train df, and the test size will default to 1-train_size
-                                            random_state=123,  # set any number here for consistency
-                                            stratify=df.survived  # need to stratify on target variable
+def splitting_data(df, col):
+    '''
+    i will write a docstring, like send in target variable
+    '''
+
+    # first split
+    train, validate_test = train_test_split(df,
+                                            train_size=0.6,
+                                            random_state=123,
+                                            stratify=df[col]
                                             )
 
-    validate, test = train_test_split(validate_test,  # this is the df that we are splitting now
-                                      test_size=0.50,  # set test or train size to 50%
-                                      random_state=123,  # gotta send in a random seed
-                                      stratify=validate_test.survived  # still got to stratify
+    # second split
+    validate, test = train_test_split(validate_test,
+                                      train_size=0.5,
+                                      random_state=123,
+                                      stratify=validate_test[col]
+
                                       )
     return train, validate, test
