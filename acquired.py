@@ -35,7 +35,6 @@ def get_telco_data():
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
 
-    df.set_index(df.columns[0], inplace=True)
     return df
 
 
@@ -54,7 +53,6 @@ def get_iris_data():
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
 
-    df.set_index(df.columns[0], inplace=True)
     return df
 
 
@@ -67,5 +65,4 @@ def get_titanic_data():
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
 
-    df.set_index(df.columns[0], inplace=True)
     return df
