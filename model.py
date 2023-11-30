@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 def preprocess_titanic(train, validate, test):
     # Define a function that applies the encoding
     def encode(df):
