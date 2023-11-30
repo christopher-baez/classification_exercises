@@ -31,10 +31,11 @@ def get_telco_data():
 
     filename = 'telco_churn.csv'
 
-    df.set_index(df.columns[0], inplace=True)
 
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
+
+    df.set_index(df.columns[0], inplace=True)
     return df
 
 
@@ -50,9 +51,10 @@ def get_iris_data():
 
     filename = 'iris.csv'
 
-    df.set_index(df.columns[0], inplace=True)
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
+
+    df.set_index(df.columns[0], inplace=True)
     return df
 
 
@@ -62,8 +64,8 @@ def get_titanic_data():
 
     filename = 'titanic.csv'
 
-    df.set_index(df.columns[0], inplace=True)
-
     # call the check_file_exists fuction
     df = check_file_exists(filename, query, url)
+
+    df.set_index(df.columns[0], inplace=True)
     return df
