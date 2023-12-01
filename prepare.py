@@ -20,9 +20,14 @@ def prep_iris(df):
 def prep_telco(df):
     """
     this  function takes in the telco database and cleans it
-
+    deletes
+        -payment type id
+        -internet service id
+        -contract type id
+        -customer id
+    turns total charges into a float by deleting empty spaces
     """
-    df = df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'Unnamed: 0', ])
+    df = df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id', ])
 
     df = df[df.total_charges != ' ']
 
@@ -49,7 +54,14 @@ def clean_titanic(df):
 
 def splitting_data(df, col):
     '''
-    i will write a docstring, like send in target variable
+    this function splits my data focusing on my target variable
+    parameters
+        df= datafram
+        col= column
+    returns
+        train
+        validate
+        test
     '''
 
     # first split

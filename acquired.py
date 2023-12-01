@@ -17,6 +17,7 @@ def check_file_exists(filename, query, url):
 
 
 def get_telco_data():
+    ''' function to get data from SQL  and turning it to a dataframe'''
     url = env.get_db_url('telco_churn')
     query = '''
     select *
